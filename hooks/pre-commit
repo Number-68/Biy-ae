@@ -1,7 +1,19 @@
 #!/usr/bin/env node
 
+// node: child_process is the built in module that helps us do CMD?
+// The function execSync is taken
 const { execSync } = require("node:child_process");
+// execSync allows you to run shell commands one after another 
+// "synchonously"
 
+
+
+
+// stack focus variabls. 
+const reactAppDir = "./front-end-biyae"; // front end
+
+
+// run function with file path option. 
 function run(cmd, options = {}) {
   try {
     execSync(cmd, { stdio: "inherit", ...options });
@@ -11,6 +23,10 @@ function run(cmd, options = {}) {
   }
 }
 
+
+
+
+// testrun function with file path option.
 function testRun(cmd, options = {}) {
   try {
     execSync(cmd, { stdio: "inherit", ...options });
@@ -20,28 +36,108 @@ function testRun(cmd, options = {}) {
   }
 }
 
-console.log("Hello... starting your pre-commit checks.");
 
-// Prettier (runs from root – adjust if needed later)
+
+
+// -------------------------------
+// -        Start of Logic       -
+// -------------------------------
+
+console.log(
+  "Hello... starting your pre-commit checks.\n" +
+  "    ,-.       _,---._ __  / \\\n" +
+  " /  )    .-'       `./ /   \\\n" +
+  "(  (   ,'            `/    /|\n" +
+  " \\  `-\"             \\'\\   / |\n" +
+  "  `.              ,  \\ \\ /  |\n" +
+  "   /`.          ,'-`----Y   |\n" +
+  "  (            ;        |   '\n" +
+  "  |  ,-.    ,-'         |  /\n" +
+  "  |  | (   |            | /\n" +
+  "  )  |  \\  `.___________|/\n" +
+  "  `--'   `--'"
+);
+
+
+
+
+// Start Prettier
 console.log("checking formatting with prettier");
-let prettierOk = testRun("npx prettier --check .");
 
+
+// function call
+let prettierOk = testRun("npx prettier --check .", { cwd: reactAppDir });
+// result applied to variable for the check.
+
+// call check -- while loop.
 while (!prettierOk) {
+
   console.log("your code is looking weird.");
   console.log("formatting issues found...");
-  run("npx prettier --write .");
+
+
+  //run prettier formatter "--write".
+  // then adds new change to the git launchpad.
+  run("npx prettier --write .", { cwd: reactAppDir });
   run("git add .");
+  
+  // rerun prettier check.
   prettierOk = testRun("npx prettier --check .");
+
+  //todo: ensure that this doesn't get stuck over and over again.
+  // has the potential to be looping.
 }
+
+
+// success.
 console.log("Finally. it's looking pretty!!!!");
+console.log(
+  "       ____()()\n" +
+  "      /      @@\n" +
+  "`~~~~~\\_;m__m._>o"
+);
+
+
+
+
+
+
 
 // ESLint – run inside the React app directory
 console.log("running ESLint");
-const reactAppDir = "./front-end-biyae";
+
+
 run("npx eslint .", { cwd: reactAppDir });
 console.log("Linting cleared!!");
+console.log(
+  "                              __\n" +
+  "                     /\\    .-\" /\n" +
+  "                    /  ; .'  .' \n" +
+  "                   :   :/  .'   \n" +
+  "                    \\  ;-.'     \n" +
+  "       .--\"\"\"\"--..__/     `.    \n" +
+  "     .'           .'    `o  \\   \n" +
+  "    /                    `   ;  \n" +
+  "   :                  \\      :  \n" +
+  " .-;        -.         `.__.-'  \n" +
+  ":  ;          \\     ,   ;       \n" +
+  "'._:           ;   :   (        \n" +
+  "    \\/  .__    ;    \\   `-.     \n" +
+  "     ;     \"-,_/..--\"`-..__)    \n" +
+  "     '\"\"--.._:"
+);
 
 console.log("all pre-commit checks passed.");
+console.log(
+  "$$  $$  $$\n" +
+  "    __||__||__||__\n" +
+  "   | * * * * * * *|\n" +
+  "   |* * * * * * * |\n" +
+  "   | * * * * * * *|\n" +
+  "   |______________|"
+);
+      
+
 process.exit(0);
 
 // todo; fix it up. make it look cleaner, add more of your whimsy to it.
