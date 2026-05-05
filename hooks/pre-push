@@ -12,7 +12,7 @@ function run(cmd) {
 }
 
 console.log("Type Checking!");
-const reactAppDir = "./frontend";
+const reactAppDir = "./front-end-biyae";
 try {
   execSync("npx tsc --noEmit", { stdio: "inherit", cwd: reactAppDir });
 } catch (err) {
