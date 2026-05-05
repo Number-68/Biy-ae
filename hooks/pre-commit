@@ -60,10 +60,10 @@ console.log(
 
 
 
+console.log("Starting with front end!");
 
 // Start Prettier
 console.log("checking formatting with prettier");
-
 
 // function call
 let prettierOk = testRun("npx prettier --check .", { cwd: reactAppDir });
@@ -96,10 +96,6 @@ console.log(
   "      /      @@\n" +
   "`~~~~~\\_;m__m._>o"
 );
-
-
-
-
 
 
 
