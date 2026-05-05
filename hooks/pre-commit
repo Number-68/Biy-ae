@@ -43,3 +43,10 @@ console.log("Linting cleared!!");
 
 console.log("all pre-commit checks passed.");
 process.exit(0);
+
+// todo; fix it up. make it look cleaner, add more of your whimsy to it.
+// also, add it to only do the tests on files that have been changed
+// so that you don't have to scan all the files every single time, y'know?
+
+//  also, make it so that each type check is contained to the specific project. meaning
+//  prettier is contained to only front end and eslints and tsc check.
