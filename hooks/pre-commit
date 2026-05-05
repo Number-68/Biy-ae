@@ -92,7 +92,7 @@ while (!prettierOk) {
   run("git add .");
   
   // rerun prettier check.
-  prettierOk = testRun("npx prettier --check .");
+  prettierOk = testRun("npx prettier --check .", { cwd: reactAppDir });
 
   //todo: ensure that this doesn't get stuck over and over again.
   // has the potential to be looping.
