@@ -39,25 +39,12 @@ console.log("Type Checking!\n" +
 );
 
 
-
-
-
 console.log("checking typescripting!");
 // run function call
-run("npx tsc", { cwd: reactAppDir });
+// added --incremental to check changes dependencies; 
+// not files, but dependency paths for safer, yet more efficient tests.
+run("npx tsc --noEmit --incremental", { cwd: reactAppDir });
 
-
-
-
-console.log("trying again for sanity")
-try {
-  execSync("npx tsc", { stdio: "inherit", cwd: reactAppDir });
-} catch (err) {
-  console.error(
-    `\n Hook failed while running: npx tsc --noEmit in ${reactAppDir}`,
-  );
-  process.exit(1);
-}
 
 
 
