@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+
+const { execSync } = require("node:child_process");
+
+
+const reactAppDir = "./front-end-biyae";
+
+// run function with file path option. 
+function run(cmd, options = {}) {
+  try {
+    execSync(cmd, { stdio: "inherit", ...options });
+  } catch (err) {
+    console.error(`\n Hook failed while running: ${cmd}`);
+    process.exit(1);
+  }
+}
+
+
+
+
+
+
+// -------------------------------
+// -        Start of Logic       -
+// -------------------------------
+
+console.log("Type Checking!\n" +
+  "    ,-.       _,---._ __  / \\\n" +
+  " /  )    .-'       `./ /   \\\n" +
+  "(  (   ,'            `/    /|\n" +
+  " \\  `-\"             \\'\\   / |\n" +
+  "  `.              ,  \\ \\ /  |\n" +
+  "   /`.          ,'-`----Y   |\n" +
+  "  (            ;        |   '\n" +
+  "  |  ,-.    ,-'         |  /\n" +
+  "  |  | (   |            | /\n" +
+  "  )  |  \\  `.___________|/\n" +
+  "  `--'   `--'"
+);
+
+
+console.log("checking typescripting!");
+// run function call
+// added --incremental to check changes dependencies; 
+// not files, but dependency paths for safer, yet more efficient tests.
+run("npx tsc --noEmit --incremental", { cwd: reactAppDir });
+
+
+
+
+
+// all checks valid
+console.log("all types are clean.");
+console.log(
+  "$$  $$  $$\n" +
+  "    __||__||__||__\n" +
+  "   | * * * * * * *|\n" +
+  "   |* * * * * * * |\n" +
+  "   | * * * * * * *|\n" +
+  "   |______________|"
+);
+
+// todo:
+// the same thing as everything on the original note too... contain it. keep everything contained to itself. lol.
