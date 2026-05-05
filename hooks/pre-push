@@ -44,14 +44,14 @@ console.log("Type Checking!\n" +
 
 console.log("checking typescripting!");
 // run function call
-run("npx tsc --noEmit", { cwd: reactAppDir });
+run("npx tsc", { cwd: reactAppDir });
 
 
 
 
 console.log("trying again for sanity")
 try {
-  execSync("npx tsc --noEmit", { stdio: "inherit", cwd: reactAppDir });
+  execSync("npx tsc", { stdio: "inherit", cwd: reactAppDir });
 } catch (err) {
   console.error(
     `\n Hook failed while running: npx tsc --noEmit in ${reactAppDir}`,
