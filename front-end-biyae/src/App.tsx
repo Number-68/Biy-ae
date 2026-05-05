@@ -15,6 +15,9 @@ function App() {
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
+
+        {/* comment here for test */}
+
         <div>
           <h1>Get started</h1>
           <p>
