@@ -10,7 +10,11 @@ function App() {
   return (
     <>
       {/* big container */}
-      <section> 
+      <section id='chat-box-container'> 
+        
+
+
+      
         
       </section>
     </>
