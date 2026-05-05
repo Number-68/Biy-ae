@@ -1,0 +1,45 @@
+#!/usr/bin/env node
+
+const { execSync } = require("node:child_process");
+
+function run(cmd, options = {}) {
+  try {
+    execSync(cmd, { stdio: "inherit", ...options });
+  } catch (err) {
+    console.error(`\n Hook failed while running: ${cmd}`);
+    process.exit(1);
+  }
+}
+
+function testRun(cmd, options = {}) {
+  try {
+    execSync(cmd, { stdio: "inherit", ...options });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+console.log("Hello... starting your pre-commit checks.");
+
+// Prettier (runs from root – adjust if needed later)
+console.log("checking formatting with prettier");
+let prettierOk = testRun("npx prettier --check .");
+
+while (!prettierOk) {
+  console.log("your code is looking weird.");
+  console.log("formatting issues found...");
+  run("npx prettier --write .");
+  run("git add .");
+  prettierOk = testRun("npx prettier --check .");
+}
+console.log("Finally. it's looking pretty!!!!");
+
+// ESLint – run inside the React app directory
+console.log("running ESLint");
+const reactAppDir = "./front-end-biyae";
+run("npx eslint .", { cwd: reactAppDir });
+console.log("Linting cleared!!");
+
+console.log("all pre-commit checks passed.");
+process.exit(0);
