@@ -11,6 +11,8 @@ function App() {
     <>
       {/* big container */}
       <section id="chat-box-container"></section>
+
+      {/* todo: start making the interface! hurray! */}
     </>
   );
 }
