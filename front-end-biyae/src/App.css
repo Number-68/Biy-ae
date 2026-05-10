@@ -1,6 +1,15 @@
 #chat-box-container {
-  height: 100%;
-  margin: 30px;
-  padding: 20px;
-  background-color: aquamarine;
+  width: fit-content;
+  max-width: 95%;
+  height: 95%;
+
+  overflow: auto;
+  outline: 2px dashed red;
+}
+
+.biyae-box {
+  outline: 2px solid blue;
+}
+.user-box {
+  outline: 2px solid green;
 }
