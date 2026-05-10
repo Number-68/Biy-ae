@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: black;
 }
 
 #overall {
@@ -11,6 +12,9 @@ body {
 }
 
 #root {
+  background-color: #faf5ef;
+  color: #050501;
+
   height: 100%;
   overflow: hidden;
 

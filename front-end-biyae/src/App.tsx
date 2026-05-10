@@ -3,9 +3,14 @@ import "./App.css";
 function App() {
   // const [count, setCount] = useState(0);
 
+  // todo;where i last ended off
+  // I'mgoingto just build all of the components right now. and then style later. next, we have to do the header nav, and then the conversation history pullout. that should be it, I think?
+  // after, we can style things, by the end of this week, we should be staritng the backend.
+
   return (
     <>
       {/* big container */}
+
       <section id="chat-box-container">
         {/* section of chat containers multiple.
         right and left.  
