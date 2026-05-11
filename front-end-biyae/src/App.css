@@ -10,12 +10,12 @@ spicy paprika: #E1662C
 end */
 
 #chat-box-container {
-  width: fit-content;
+  /* width: fit-content; */
   max-width: 80%;
   height: 80%;
 
-  padding-left: 1%;
-  padding-right: 1%;
+  /* padding-left: 1%;
+  padding-right: 1%; */
 
   overflow: auto;
   outline: 2px dashed red;
@@ -27,26 +27,48 @@ end */
 }
 
 #chat-box-container::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #fba780;
   border-radius: 10px;
 }
 
 #chat-box-container::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #e1662c;
   border-radius: 10px;
 }
 
 #chat-box-container::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #652e14;
 }
 
 .biyae-box {
   margin-top: 10px;
   margin-bottom: 10px;
-  outline: 2px solid blue;
+  margin-right: 10px;
+  margin-left: 10px;
+  /* outline: 2px solid #E1662C; */
+  padding: 2%;
 }
 .user-box {
   margin-top: 10px;
   margin-bottom: 10px;
-  outline: 2px solid green;
+  margin-left: 10%;
+  margin-right: 10px;
+  outline: 2px solid #0487a5;
+  padding: 2%;
+  border-radius: 20px 20px 0px 20px;
+  background-color: #37a6be;
+  color: #faf5ef;
+}
+
+#text-input {
+  margin-top: 30px;
+  outline: 2px solid rgb(128, 128, 0);
+  width: 80%;
+}
+
+#text-input textarea {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #faf5ef;
+  border: none;
 }
