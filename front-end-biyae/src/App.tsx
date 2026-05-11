@@ -168,9 +168,11 @@ function App() {
         </div>
       </section>
       <section id="text-input">
-        {/* todo: make it so that when overflow happens, it pushes upwards and doesn't 
-        go downwards */}
-        <textarea></textarea>
+        <form>
+          {/* todo: make it so that when overflow happens, it pushes upwards and doesn't 
+          go downwards */}
+          <textarea></textarea>
+        </form>
       </section>
     </>
   );
