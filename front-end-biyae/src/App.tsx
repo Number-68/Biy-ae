@@ -7,6 +7,8 @@ function App() {
   // I'mgoingto just build all of the components right now. and then style later. next, we have to do the header nav, and then the conversation history pullout. that should be it, I think?
   // after, we can style things, by the end of this week, we should be staritng the backend.
 
+  // avoid force reload upon form submission.
+
   return (
     <>
       {/* big container */}
@@ -168,11 +170,11 @@ function App() {
         </div>
       </section>
       <section id="text-input">
-        <form>
-          {/* todo: make it so that when overflow happens, it pushes upwards and doesn't 
+        {/* todo: make it so that when overflow happens, it pushes upwards and doesn't 
           go downwards */}
-          <textarea></textarea>
-        </form>
+        <textarea></textarea>
+
+        <button type="submit"></button>
       </section>
     </>
   );
