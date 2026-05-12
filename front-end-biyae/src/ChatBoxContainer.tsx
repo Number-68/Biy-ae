@@ -25,17 +25,11 @@ export function ChatBoxContainer() {
 
   return (
     <section id="chat-box-container">
-      {/* section of chat containers multiple.
-        right and left.  
-        just examples for now*/}
-
       {/* <div className="biyae-box">
         </div>
         <div className="user-box">
         </div> */}
-
       {fullMessageDOM}
-      {/* todo: clean all of this up. encapsluate it outside of return for cleanliness. */}
     </section>
   );
 }
