@@ -1,0 +1,15 @@
+[
+  { "id": 1, "role": "user", "message": "Hi" },
+  { "id": 2, "role": "biyae", "message": "Hello" },
+  {
+    "id": 3,
+    "role": "user",
+    "message": "example of a text from biyae. Lorem ipsum dolor sit amet, consecteturadipiscing elit. Proin elementum massa elit, eu varius nisl tristiquelaoreet. Cras elementum, quam vel pellentesque cursus, ligula quamfringilla urna, vitae blandit dui justo et ligula. Integer pharetra idante quis interdum. Mauris hendrerit euismod felis, in suscipit auguemalesuada in. Donec id fringilla felis. Donec accumsan tempus dui eu"
+  },
+  { "id": 4, "role": "biyae", "message": "wow that's long" },
+  { "id": 5, "role": "user", "message": "Hi" },
+  { "id": 6, "role": "biyae", "message": "I know right?" },
+  { "id": 7, "role": "user", "message": "how are you doing?" },
+  { "id": 8, "role": "biyae", "message": "Hi" },
+  { "id": 9, "role": "user", "message": "thank you for the response!" }
+]
