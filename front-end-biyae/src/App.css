@@ -48,6 +48,8 @@ end */
   margin-left: 10px;
   /* outline: 2px solid #E1662C; */
   padding: 2%;
+
+  overflow-wrap: break-word;
 }
 .user-box {
   margin-top: 10px;
@@ -59,6 +61,8 @@ end */
   border-radius: 20px 20px 0px 20px;
   background-color: #37a6be;
   color: #faf5ef;
+
+  overflow-wrap: break-word;
 }
 
 #text-input {

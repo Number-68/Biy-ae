@@ -17,10 +17,15 @@ function App() {
       <section id="text-input">
         {/* todo: make it so that when overflow happens, it pushes upwards and doesn't 
           go downwards */}
+
         <textarea></textarea>
 
-        <button type="submit"></button>
+        <button type="submit">send!</button>
       </section>
+
+      {/* last ended off: do integratoin test for the text area input. clear 
+      and print out to console the text that was in it just for
+       validation. etc */}
     </>
   );
 }
