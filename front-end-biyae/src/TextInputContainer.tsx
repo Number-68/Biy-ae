@@ -13,7 +13,12 @@ export function InputBoxContainer() {
 
   //send the message
   const sendMessage = () => {
-    console.log(input);
+    //do not send empty messages
+    if (!input.trim()) return;
+
+    const jsonMessage = JSON.stringify({ role: "User", message: input });
+
+    console.log(jsonMessage); //debug message.
     //for now, log it to console.
     // for later, we use this to send to api.
     setInput("");
