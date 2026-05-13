@@ -15,6 +15,7 @@ export function InputBoxContainer() {
   const sendMessage = () => {
     console.log(input);
     //for now, log it to console.
+    // for later, we use this to send to api.
     setInput("");
   };
   return (
@@ -29,7 +30,9 @@ export function InputBoxContainer() {
       />
       {/* small random happensance. when entering nothing, it still sends. ensure to clear up that so that we don't have any blank inputs. */}
 
-      <button type="submit">send!</button>
+      <button type="submit" onClick={sendMessage}>
+        send!
+      </button>
     </section>
   );
 }

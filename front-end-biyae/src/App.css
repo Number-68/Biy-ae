@@ -69,6 +69,7 @@ end */
   margin-top: 30px;
   outline: 2px solid rgb(128, 128, 0);
   width: 80%;
+  display: flex;
 }
 
 #text-input textarea {
