@@ -41,13 +41,10 @@ function App() {
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
         />
+        {/* small random happensance. when entering nothing, it still sends. ensure to clear up that so that we don't have any blank inputs. */}
 
         <button type="submit">send!</button>
       </section>
-
-      {/* last ended off: do integratoin test for the text area input. clear 
-      and print out to console the text that was in it just for
-       validation. etc */}
     </>
   );
 }
