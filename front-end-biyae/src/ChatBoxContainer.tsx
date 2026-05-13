@@ -1,4 +1,6 @@
-import chatExample from "./test-chat.json";
+// import chatExample from "./test-chat.json";
+
+import { useState, useEffect } from "react";
 
 // import type
 interface Message {
@@ -8,7 +10,22 @@ interface Message {
 }
 
 export function ChatBoxContainer() {
-  const messages = chatExample as Message[];
+  // set the useState object to messages and setMessages
+  const [messages, setMessages] = useState<Message[]>([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/TotalChat")
+      .then((res) => res.json())
+      .then((history) => setMessages(history))
+      .catch((err) => console.error("Error loading history:", err));
+  }, []);
+
+  console.log(
+    "this is the messages: " +
+      messages +
+      " and here is the setmessages: " +
+      setMessages,
+  );
 
   const fullMessageDOM = messages
     .sort((a, b) => a.id - b.id)
@@ -22,6 +39,9 @@ export function ChatBoxContainer() {
         </div>
       );
     });
+
+  // updaters
+  // another will be getting most recent chat message. basically.
 
   return (
     <section id="chat-box-container">
