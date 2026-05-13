@@ -52,7 +52,7 @@ run("npx tsc --noEmit --incremental", { cwd: reactAppDir });
 // all checks valid
 console.log("all types are clean.");
 console.log(
-  "$$  $$  $$\n" +
+  "      $$  $$  $$\n" +
   "    __||__||__||__\n" +
   "   | * * * * * * *|\n" +
   "   |* * * * * * * |\n" +
