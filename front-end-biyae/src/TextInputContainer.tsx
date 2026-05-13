@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export function InputBoxContainer() {
   // define handlers
@@ -18,15 +18,31 @@ export function InputBoxContainer() {
     // for later, we use this to send to api.
     setInput("");
   };
+
+  // auto resize
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const autoResize = () => {
+    if (textareaRef.current) {
+      textareaRef.current.style.height = "auto";
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+    }
+  };
   return (
     <section id="text-input">
       {/* todo: make it so that when overflow happens, it pushes upwards and doesn't 
           go downwards */}
 
       <textarea
+        ref={textareaRef}
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => {
+          setInput(e.target.value);
+          autoResize();
+        }}
         onKeyDown={handleKeyDown}
+        style={{ resize: "none", overflow: "hidden" }}
+        placeholder="Type your message here..."
       />
       {/* small random happensance. when entering nothing, it still sends. ensure to clear up that so that we don't have any blank inputs. */}
 
