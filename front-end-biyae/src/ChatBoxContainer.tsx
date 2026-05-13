@@ -25,10 +25,10 @@ export function ChatBoxContainer() {
 
   return (
     <section id="chat-box-container">
-      {/* <div className="biyae-box">
-        </div>
-        <div className="user-box">
-        </div> */}
+      {/* 
+        <div className="biyae-box"></div>
+        <div className="user-box"></div> 
+        */}
       {fullMessageDOM}
     </section>
   );
