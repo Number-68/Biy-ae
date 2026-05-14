@@ -157,3 +157,10 @@ The goal is a plug‑and‑play local AI assistant that can be deployed anywhere
 - Experimentation with LLMs and agent logic  
 - Custom automation workflows  
 - Template‑based writing and documentation  
+
+
+--- 
+
+# Learning Experience. 
+The repo will be littered with comments describing my personal learnings of the different sections of the system and it's architecture. 
+
