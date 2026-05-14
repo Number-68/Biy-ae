@@ -12,13 +12,30 @@ export function InputBoxContainer() {
   };
 
   //send the message
-  const sendMessage = () => {
+  const sendMessage = async () => {
     //do not send empty messages
     if (!input.trim()) return;
 
-    const jsonMessage = JSON.stringify({ role: "User", message: input });
+    const jsonMessage = JSON.stringify({ message: input });
 
-    console.log(jsonMessage); //debug message.
+    try {
+      const response = await fetch("http://localhost:8000/NewMessage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: jsonMessage,
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json(); // if your API returns JSON
+      console.log("Success:", data);
+    } catch (error) {
+      console.error("Error sending message:", error);
+    }
     //for now, log it to console.
     // for later, we use this to send to api.
     setInput("");

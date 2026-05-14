@@ -6,9 +6,13 @@ import json
 from pathlib import Path
 from fastapi import HTTPException
 
+
 # CORS middleware
 from fastapi.middleware.cors import CORSMiddleware
 
+
+# for post stuff
+from pydantic import BaseModel
 
 
 
@@ -17,6 +21,11 @@ from fastapi.middleware.cors import CORSMiddleware
 
 # define testjson file
 CHAT_FILE = Path("test-chat.json")
+
+
+# defining expected type 
+class MessageRequest(BaseModel):
+    message: str
 
 
 
@@ -63,32 +72,39 @@ def TotalChat():
         raise HTTPException(status_code=500, detail="Chat file is corrupted")
 
 
-# logic must be done to compare, no? what other logic could I do to ensure that we aren't like completely, constantly, 
-# resending the entire chat? 
-# at the start of a chat, there should be only a singular moment where the frontend requests the ENTIRE chat. 
-# then, everything else should be parsing the most recent, no? 
-# I think the backend should have a copy of the chat, no? and then it compares the whole chat and sends what isn't there?
-# see what examples other people do?
+@app.post("/NewMessage")
+def NewMessage(payload: MessageRequest):
 
-# @app.post("/NewMessage")
-# def NewMessage():
+
+    # if not exists, create
+    if not CHAT_FILE.exists():
+        data = []
+    else:
+        try:
+            with open(CHAT_FILE, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except json.JSONDecodeError:
+            raise HTTPException(status_code=500, detail="Corrupt JSON file")
     
-    # if no chatjson exists, make it. 
-    # if chat.json exists, add to it the new message.
+    
+    if data:
+        next_id = max(item["id"] for item in data) + 1
+    else:
+        next_id = 1
 
-# logic to kinda get this thing up and running
-# what do I want to do? 
-# add a gitignore ofr local test files that are to be changed. 
-# set up python to receive messages from react 
-# set up python to parse that data into the local json file that acts as a immitation for messages 
-# set up python to parse it to a bigger file containing all of the messages. 
-# set up python to serve it back to react. 
-# this is basically the loop that we have. and then processing the response with the LLm would be other things with that as well.
 
-# todo: fix up entire architecture a bit.
-# we're going to try to fix it up. backend system is the source of truth. 
-# front end system is just a represenation 
-# for now, I think i have to rebuild--or at least modify--the ffront end to have usestates now... just to have it without the .json file. 
-# for that, we're goign to also have to make it load a full conversation. y'know?
+
+    new_message = {
+        "id": next_id,
+        "role": "User",
+        "message": payload.message
+    }
+
+
+    data.append(new_message)
+    with open(CHAT_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+    return {"status": "ok", "id": next_id}
 
 # run with uvicorn main:app --reload
