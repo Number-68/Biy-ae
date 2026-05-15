@@ -25,21 +25,18 @@ export function ChatBoxContainer() {
 
   // useEffect application - here, it only calls once when the entire component is rendered for the first time?
   useEffect(() => {
-    fetch("http://localhost:8000/TotalChat")
-      .then((res) => res.json())
-      .then((history) => setMessages(history))
-      .catch((err) => console.error("Error loading history:", err));
+    fetch("http://localhost:8000/TotalChat") // send and await promise -- fetch is always async -- promise is a class. this is OOP, it gives all sorts of class specific methods to it.
+      .then((res) => res.json()) // once promise fulfilled, flow continues to .then() -- .then() continues the async flow for code. just helper to encapsulate logic that must be encapsulated
+      .then((history) => setMessages(history)) // first block (variable container representing data.) => the logic to manipulate it.
+      .catch((err) => console.error("Error loading history:", err)); // .catch() error handles. blatantly.
   }, []);
 
-  console.log(
-    "this is the messages: " +
-      messages +
-      " and here is the setmessages: " +
-      setMessages,
-  );
+  // debug messages
+  console.log("this is the messages: " + messages);
 
+  // dissect messages and apply as html.
   const fullMessageDOM = messages
-    .sort((a, b) => a.id - b.id)
+    .sort((a, b) => a.id - b.id) // order by id, chronologically.
     .map((msg) => {
       const messageClass = msg.role === "User" ? "user-box" : "biyae-box";
 
