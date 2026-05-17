@@ -46,14 +46,15 @@ export function ChatBoxContainer() {
   const fullMessageDOM = messages
     .sort((a, b) => a.id - b.id) // order by id, chronologically.
     .map((msg) => {
-      const messageClass = msg.role === "User" ? "user-box" : "biyae-box";
+      const messageClass = msg.role === "User" ? "user-box" : "biyae-box"; // every scan through array checks.
 
       return (
+        //every loop, export DOM.
         <div key={msg.id} className={`message ${messageClass}`}>
           <p>{msg.role}:</p>
           <p className="message-content">{msg.message}</p>
         </div>
-      );
+      ); // continuously adds elements -- one long line of similar <div> elements
     });
 
   // updaters
