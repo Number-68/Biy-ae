@@ -1,8 +1,15 @@
 import { useState, useRef } from "react";
+// useState: Local Storing of data
+// useRef:
 
 export function InputBoxContainer() {
   // define handlers
   const [input, setInput] = useState("");
+  // input is result
+  // setInput is function to modify.
+
+  // textareaRef define
+  const textareaRef = useRef<HTMLTextAreaElement>(null); // empty until fulfilled.
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -36,29 +43,34 @@ export function InputBoxContainer() {
     } catch (error) {
       console.error("Error sending message:", error);
     }
-    //for now, log it to console.
-    // for later, we use this to send to api.
     setInput("");
   };
 
-  // auto resize
-  const textareaRef = useRef<HTMLTextAreaElement>(null);
-
+  // auto resize.
   const autoResize = () => {
     if (textareaRef.current) {
       textareaRef.current.style.height = "auto";
+      //variable -- current variable -- varirable style -- height == set height.
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+      // if reaches a certain threshold, enable scroll.
     }
   };
   return (
     <section id="text-input">
       {/* todo: make it so that when overflow happens, it pushes upwards and doesn't 
-          go downwards */}
+          go downwards 
+          might need to change the whole organization of the dom if I want this to be cleaner. 
+          instead of having the chat box and text input on the same line, we could make textinput
+          above and have it hang so that its size is not contained by the top part, y'know?
+          */}
 
-      <textarea
-        ref={textareaRef}
+      <textarea //reminder -- JSX
+        ref={textareaRef} // ref = special prop. attaches to textareaRef with this specific DOM Element
         value={input}
         onChange={(e) => {
+          // check if change. every change triggers a check.
+          // e can be anything depending on prop.
+          // in this instance, it sends the event, in which we can target the value with method flags
           setInput(e.target.value);
           autoResize();
         }}
@@ -66,11 +78,8 @@ export function InputBoxContainer() {
         style={{ resize: "none", overflow: "hidden" }}
         placeholder="Type your message here..."
       />
-      {/* small random happensance. when entering nothing, it still sends. ensure to clear up that so that we don't have any blank inputs. */}
 
-      <button type="submit" onClick={sendMessage}>
-        send!
-      </button>
+      <button onClick={sendMessage}>send!</button>
     </section>
   );
 }
