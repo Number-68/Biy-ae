@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 // useState: Local Storing of data
 // useRef: adds empty state, we add state to create reference.
 
-export function InputBoxContainer({ onSend }) {
+export function InputBoxContainer({ onSend, disabled }) {
   // define handlers
   const [input, setInput] = useState("");
   // input is result
@@ -21,12 +21,15 @@ export function InputBoxContainer({ onSend }) {
   };
 
   const confirmSend = () => {
-    // send to ChatComponents function
-    onSend(input);
-    // sendMessage();
+    if (!disabled) {
+      // todo: add a little notification or like marker or visual cue that shows that things are disabled for user exerience.
+      // send to ChatComponents function
+      onSend(input);
+      // sendMessage();
 
-    // Clear message
-    setInput("");
+      // Clear message
+      setInput("");
+    }
   };
 
   // auto resize.
