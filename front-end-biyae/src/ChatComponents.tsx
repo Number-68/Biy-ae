@@ -1,7 +1,14 @@
 import { ChatBoxContainer } from "./ChatBoxContainer";
 import { InputBoxContainer } from "./TextInputContainer";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// import type
+interface Message {
+  id: number;
+  role: string;
+  message: string;
+}
 
 export function ChatComponents() {
   // so here, we're going to get the input box to send back the input. it's goign to trigger the function here,
@@ -44,9 +51,29 @@ export function ChatComponents() {
     setIsWaiting(false);
   };
 
+  // for displaying messages
+  // set the useState object to messages and setMessages
+  const [messages, setMessages] = useState<Message[]>([]);
+  // messages is what you use to read the component. It is automatically updated when you apply
+  // Apply changes to setMessages -> use messages to output.
+
+  // useEffect application - here, it only calls once when the entire component is rendered for
+  // the first time
+  useEffect(() => {
+    fetch("http://localhost:8000/TotalChat") // send and await promise -- fetch is always async
+      // -- promise is a class -- object.
+      // gives all sorts of class specific methods to it.
+      .then((res) => res.json()) // once promise fulfilled, flow continues to .then() -- .then()
+      // continues the async flow for code. just helper to encapsulate
+      // logic that must be encapsulated
+      .then((history) => setMessages(history)) // first block
+      // (variable container representing data.) => the logic.
+      .catch((err) => console.error("Error loading history:", err)); // .catch() error handles. blatantly.
+  }, []);
+
   return (
     <>
-      <ChatBoxContainer />
+      <ChatBoxContainer messages={messages} />
       <InputBoxContainer onSend={sendMessage} disabled={isWaiting} />
       {/* remidner; props can be used to send things bilaterally but they do it differently. 
         from parent to child, it can be done by just setting the variables
