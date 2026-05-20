@@ -19,6 +19,7 @@ export function ChatComponents() {
     const jsonMessage = JSON.stringify({ message: input });
 
     try {
+      console.log("waiting true");
       setIsWaiting(true);
       const response = await fetch("http://localhost:8000/NewMessage", {
         method: "POST",
@@ -38,6 +39,8 @@ export function ChatComponents() {
       console.error("Error sending message:", error);
     }
     // setInput("");
+
+    console.log("waiting done");
     setIsWaiting(false);
   };
 
