@@ -20,16 +20,13 @@ export function ChatBoxContainer() {
   // set the useState object to messages and setMessages
   const [messages, setMessages] = useState<Message[]>([]);
   // messages is what you use to read the component. It is automatically updated when you apply
-  // something to setMessages
-  // setMessages is what you use to apply new data to your useState object.
   // Apply changes to setMessages -> use messages to output.
-  // they are connected.
 
   // useEffect application - here, it only calls once when the entire component is rendered for
-  // the first time?
+  // the first time
   useEffect(() => {
     fetch("http://localhost:8000/TotalChat") // send and await promise -- fetch is always async
-      // -- promise is a class -- object. this is OOP, it
+      // -- promise is a class -- object.
       // gives all sorts of class specific methods to it.
       .then((res) => res.json()) // once promise fulfilled, flow continues to .then() -- .then()
       // continues the async flow for code. just helper to encapsulate

@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 // useState: Local Storing of data
-// useRef:
+// useRef: adds empty state, we add state to create reference.
 
 export function InputBoxContainer() {
   // define handlers
@@ -13,7 +13,6 @@ export function InputBoxContainer() {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
       sendMessage();
     }
   };
