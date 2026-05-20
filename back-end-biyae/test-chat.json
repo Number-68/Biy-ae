@@ -1,17 +1,49 @@
 [
-  { "id": 1, "role": "User", "message": "Hi" },
-  { "id": 2, "role": "Biy.Ae", "message": "Hello" },
+  {
+    "id": 1,
+    "role": "User",
+    "message": "Hi"
+  },
+  {
+    "id": 2,
+    "role": "Biy.Ae",
+    "message": "Hello"
+  },
   {
     "id": 3,
     "role": "User",
     "message": "example of a text from biyae. Lorem ipsum dolor sit amet, consecteturadipiscing elit. Proin elementum massa elit, eu varius nisl tristiquelaoreet. Cras elementum, quam vel pellentesque cursus, ligula quamfringilla urna, vitae blandit dui justo et ligula. Integer pharetra idante quis interdum. Mauris hendrerit euismod felis, in suscipit auguemalesuada in. Donec id fringilla felis. Donec accumsan tempus dui eu"
   },
-  { "id": 4, "role": "Biy.Ae", "message": "wow that's long" },
-  { "id": 5, "role": "User", "message": "Hi" },
-  { "id": 6, "role": "Biy.Ae", "message": "I know right?" },
-  { "id": 7, "role": "User", "message": "how are you doing?" },
-  { "id": 8, "role": "Biy.Ae", "message": "Hi" },
-  { "id": 9, "role": "User", "message": "thank you for the response!" },
+  {
+    "id": 4,
+    "role": "Biy.Ae",
+    "message": "wow that's long"
+  },
+  {
+    "id": 5,
+    "role": "User",
+    "message": "Hi"
+  },
+  {
+    "id": 6,
+    "role": "Biy.Ae",
+    "message": "I know right?"
+  },
+  {
+    "id": 7,
+    "role": "User",
+    "message": "how are you doing?"
+  },
+  {
+    "id": 8,
+    "role": "Biy.Ae",
+    "message": "Hi"
+  },
+  {
+    "id": 9,
+    "role": "User",
+    "message": "thank you for the response!"
+  },
   {
     "id": 10,
     "role": "Biy.Ae",
@@ -27,10 +59,44 @@
     "role": "Biy.Ae",
     "message": "thank you for the response!ifhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
   },
-
   {
     "id": 13,
     "role": "User",
     "message": "this is a message. tasdasda esponse!ifhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"
+  },
+  {
+    "id": 14,
+    "role": "User",
+    "message": "asdasdas"
+  },
+  {
+    "id": 15,
+    "role": "User",
+    "message": "mre power to you"
+  },
+  {
+    "id": 16,
+    "role": "User",
+    "message": "now all we have to do is just figure out how to make it hot reload when the response comes in? "
+  },
+  {
+    "id": 17,
+    "role": "User",
+    "message": "and also push the browser windwos forced to the bottome for the most recent chats!"
+  },
+  {
+    "id": 18,
+    "role": "User",
+    "message": "here we go! lets run it!"
+  },
+  {
+    "id": 19,
+    "role": "User",
+    "message": "agent 47"
+  },
+  {
+    "id": 20,
+    "role": "User",
+    "message": "agent 47"
   }
 ]
