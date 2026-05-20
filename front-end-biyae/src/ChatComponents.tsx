@@ -54,6 +54,8 @@ export function ChatComponents() {
     // create message container to fit inside messages array.
     // eslint-disable-next-line react-hooks/purity
     const tempId = Date.now(); // to fix impure function calling.
+    //todo: instead of using date.now, since it's causing this error even though it's a false positive, we should use useref instead.
+    // apply it here when you have time.
 
     const newUserMessage = { id: tempId, role: "User", message: input };
     // apply it to messages state
