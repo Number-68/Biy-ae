@@ -49,6 +49,15 @@ export function ChatComponents() {
 
     console.log("waiting done");
     setIsWaiting(false);
+
+    // adding new userchat to print on chat box.
+    // create message container to fit inside messages array.
+    // eslint-disable-next-line react-hooks/purity
+    const tempId = Date.now(); // to fix impure function calling.
+
+    const newUserMessage = { id: tempId, role: "User", message: input };
+    // apply it to messages state
+    setMessages((prevMessages) => [...prevMessages, newUserMessage]);
   };
 
   // for displaying messages
@@ -70,6 +79,14 @@ export function ChatComponents() {
       // (variable container representing data.) => the logic.
       .catch((err) => console.error("Error loading history:", err)); // .catch() error handles. blatantly.
   }, []);
+
+  // todo, add function to auto scroll the page down so that the user doesn't have to do that when
+  // new messages are added.
+
+  // last ended off next: create interface for BiyAe. time to actually get a model to run and stuff like that. hurray!
+  // just use a small one for the curernt dev build right now. I don't want to blow up my laptop
+
+  console.log("Current messages:", messages); //debugging
 
   return (
     <>
