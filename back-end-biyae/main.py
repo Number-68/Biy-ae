@@ -108,4 +108,3 @@ def NewMessage(payload: MessageRequest):
     return {"status": "ok", "id": next_id}
 
 # run with uvicorn main:app --reload
-# add change
