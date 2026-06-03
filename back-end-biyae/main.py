@@ -15,6 +15,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 
+# connect to ollama via httpx
+import httpx
+
+
+
+# todo next: connect the api here and try to make a complete feedback loop that works! hurray!
+# now, what I'll do is kinda catch up this version to the main.
+
 
 
 
