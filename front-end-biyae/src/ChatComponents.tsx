@@ -57,9 +57,9 @@ export function ChatComponents() {
     //todo: instead of using date.now, since it's causing this error even though it's a false positive, we should use useref instead.
     // apply it here when you have time.
 
-    const newUserMessage = { id: tempId, role: "User", message: input };
+    const newMessage = { id: tempId, role: "User", message: input };
     // apply it to messages state
-    setMessages((prevMessages) => [...prevMessages, newUserMessage]);
+    setMessages((prevMessages) => [...prevMessages, newMessage]);
   };
 
   // for displaying messages
@@ -84,9 +84,6 @@ export function ChatComponents() {
 
   // todo, add function to auto scroll the page down so that the user doesn't have to do that when
   // new messages are added.
-
-  // last ended off next: create interface for BiyAe. time to actually get a model to run and stuff like that. hurray!
-  // just use a small one for the curernt dev build right now. I don't want to blow up my laptop
 
   console.log("Current messages:", messages); //debugging
 
