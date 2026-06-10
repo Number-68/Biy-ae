@@ -85,6 +85,16 @@ export function ChatComponents() {
   // todo, add function to auto scroll the page down so that the user doesn't have to do that when
   // new messages are added.
 
+  // where we last ended off:
+  // first, we have to fix up the process of when we're getting the AI response, we have to show it immediatly too.
+  // next. after that, whenever there is a response at all, we should kinda force the page to scroll down to follow it.
+  // that's the next two things that we can kinda figure out right now.
+  // after we get proof of concept, we are going to start cleaning up and organizing the code.
+  // because this is a bit of a travesty.
+  // not to mention change the order of which the UI updates. cause there's no way we're making the user wait for the whole process to finish
+  // before printing out the user's message.
+  // i think this needs a whole refractor for more dynamic work.
+
   console.log("Current messages:", messages); //debugging
 
   return (
