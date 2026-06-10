@@ -15,6 +15,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 
+# connect to ollama via httpx
+import httpx
+
+
+
+
 
 
 
@@ -71,12 +77,9 @@ def TotalChat():
     except json.JSONDecodeError:
         raise HTTPException(status_code=500, detail="Chat file is corrupted")
 
-
 @app.post("/NewMessage")
 def NewMessage(payload: MessageRequest):
-
-
-    # if not exists, create
+    # --- 1. Save user message (your existing code) ---
     if not CHAT_FILE.exists():
         data = []
     else:
@@ -85,26 +88,54 @@ def NewMessage(payload: MessageRequest):
                 data = json.load(f)
         except json.JSONDecodeError:
             raise HTTPException(status_code=500, detail="Corrupt JSON file")
-    
-    
+
     if data:
         next_id = max(item["id"] for item in data) + 1
     else:
         next_id = 1
 
-
-
-    new_message = {
+    user_message = {
         "id": next_id,
         "role": "User",
         "message": payload.message
     }
+    data.append(user_message)
 
+    # --- 2. Call Ollama ---
+    OLLAMA_URL = "http://localhost:11434/api/generate"
+    try:
+        with httpx.Client(timeout=30.0) as client:
+            ollama_payload = {
+                "model": "tinyllama",          # or whatever model you pulled
+                "prompt": payload.message,
+                "stream": False
+            }
+            response = client.post(OLLAMA_URL, json=ollama_payload)
+            response.raise_for_status()
+            ollama_reply = response.json()["response"]
+    except Exception as e:
+        # If Ollama fails, still save user message but return error
+        raise HTTPException(status_code=502, detail=f"Ollama error: {str(e)}")
 
-    data.append(new_message)
+    # --- 3. Save assistant reply ---
+    assistant_id = next_id + 1
+    assistant_message = {
+        "id": assistant_id,
+        "role": "Biy.Ae",
+        "message": ollama_reply
+    }
+    data.append(assistant_message)
+
+    # Write everything back to file
     with open(CHAT_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-    return {"status": "ok", "id": next_id}
+    # --- 4. Return both messages (or just the assistant reply) ---
+    return {
+        "status": "ok",
+        "user_id": next_id,
+        "assistant_id": assistant_id,
+        "reply": ollama_reply
+    }
 
 # run with uvicorn main:app --reload

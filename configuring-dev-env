@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+
+
+//for  now, this is just a todo: 
+// for whenever making a new environment, replication is key of course. 
+// something that I didn't realize was that the pre-hooks don't transfer over.
+// so what we're going to add here is just ensure that you add replication. configuration.

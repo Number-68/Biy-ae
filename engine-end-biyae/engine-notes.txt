@@ -1,0 +1,6 @@
+
+
+to run this thing with ollama
+
+Q: how to open the engine with api interface. 
+and also how to use that interface? = ollama serve

@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 // useState: Local Storing of data
 // useRef: adds empty state, we add state to create reference.
 
-export function InputBoxContainer() {
+export function InputBoxContainer({ onSend, disabled }) {
   // define handlers
   const [input, setInput] = useState("");
   // input is result
@@ -13,36 +13,23 @@ export function InputBoxContainer() {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
-      sendMessage();
+      confirmSend();
+      // this can be put into the element rather than  as an arrow function.
+      // todo: too lazy to do it now.
+      // even though it's short.
     }
   };
 
-  //send the message
-  const sendMessage = async () => {
-    //do not send empty messages
-    if (!input.trim()) return;
+  const confirmSend = () => {
+    if (!disabled) {
+      // todo: add a little notification or like marker or visual cue that shows that things are disabled for user exerience.
+      // send to ChatComponents function
+      onSend(input);
+      // sendMessage();
 
-    const jsonMessage = JSON.stringify({ message: input });
-
-    try {
-      const response = await fetch("http://localhost:8000/NewMessage", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: jsonMessage,
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data = await response.json(); // if your API returns JSON
-      console.log("Success:", data);
-    } catch (error) {
-      console.error("Error sending message:", error);
+      // Clear message
+      setInput("");
     }
-    setInput("");
   };
 
   // auto resize.
@@ -78,7 +65,7 @@ export function InputBoxContainer() {
         placeholder="Type your message here..."
       />
 
-      <button onClick={sendMessage}>send!</button>
+      <button onClick={confirmSend}>send!</button>
     </section>
   );
 }

@@ -1,6 +1,5 @@
 import "./App.css";
-import { ChatBoxContainer } from "./ChatBoxContainer";
-import { InputBoxContainer } from "./TextInputContainer";
+import { ChatComponents } from "./ChatComponents";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -8,8 +7,7 @@ function App() {
   return (
     <>
       {/* big container */}
-      <ChatBoxContainer />
-      <InputBoxContainer />
+      <ChatComponents />
     </>
   );
 }
