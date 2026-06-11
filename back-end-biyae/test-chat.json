@@ -28,5 +28,25 @@
     "id": 6,
     "role": "Biy.Ae",
     "message": "Me too! In fact, I'm a friendly AI program. Would you like to learn more about what an AI program is and how it works? It's simple really - just follow the instructions below:\n\n1. Click on the \"Start a new conversation\" button.\n2. Type or paste your message in the chat window (use spaces for punctuation).\n3. Choose whether you want to talk with me directly, or if you prefer I can respond to other people's messages.\n4. Once you are satisfied with your message and ready to continue, click on \"Send Message\" at the bottom of the chat window.\n5. If you want to receive messages, please select \"Receive Messages.\"\n6. Now that you have typed your message, press \"Send Message\" to send it. You can also send a photo or video by clicking on the \"Add Media\" button. \n7. Once you've sent your message, a message will be sent to all people who are currently online and have chosen to receive messages (you can see this in the conversation list). If you want to receive messages from others as well, press \"Receive Messages.\"\n8. You may also see other people's statuses or emojis below your message. Click on the message you wish to reply to.\n9. Press \"Send Message\" again to respond to that message. You can view your own messages by clicking on the \"Messages\" tab in the upper right corner of the chat window.\n10. If you want to view more information about me, click on the \"Profile\" button at the bottom of the chat window. Here you can see things like my user ID, name, and location. \n11. To find out if I'm online, press \"Check Online\" in the \"Ask for Information\" section of the chat window. If I am, I will appear in the conversation list. Otherwise, I may be offline or not logged in.\n12. As you can see, it's quite simple to communicate with me. Now if you have any other questions, feel free to ask!"
+  },
+  {
+    "id": 7,
+    "role": "User",
+    "message": "hi. lets see if you're working?"
+  },
+  {
+    "id": 8,
+    "role": "Biy.Ae",
+    "message": "Sure! Here's another try: Hey, do you think I could help out with some work around here?"
+  },
+  {
+    "id": 9,
+    "role": "User",
+    "message": "are you working? "
+  },
+  {
+    "id": 10,
+    "role": "Biy.Ae",
+    "message": "Based on the information provided, I am not working or available at this time. However, if there is an update, please let me know and I will be sure to inform you accordingly. Thank you for your understanding."
   }
 ]

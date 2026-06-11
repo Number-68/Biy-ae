@@ -19,11 +19,18 @@ export function ChatComponents() {
 
   //send the message
   const sendMessage = async (input) => {
+    console.log("waiting for response");
     //do not send empty messages
     if (!input.trim()) return;
 
     // prepare message into json
     const jsonMessage = JSON.stringify({ message: input });
+    // adding new userchat to print on chat box.
+    // create message container to fit inside messages array.
+    // eslint-disable-next-line react-hooks/purity
+    const tempId = Date.now(); // to fix impure function calling.
+    const newMessage = { id: tempId, role: "User", message: input };
+    displayMessage(newMessage);
 
     try {
       console.log("waiting true");
@@ -48,18 +55,11 @@ export function ChatComponents() {
     // setInput("");
 
     console.log("waiting done");
+
+    // unfinished. we have to kinda parse the infrmation into a container that fits the interface.
+    // so make a small little container when you come back.
+    displayMessage(newMessage);
     setIsWaiting(false);
-
-    // adding new userchat to print on chat box.
-    // create message container to fit inside messages array.
-    // eslint-disable-next-line react-hooks/purity
-    const tempId = Date.now(); // to fix impure function calling.
-    //todo: instead of using date.now, since it's causing this error even though it's a false positive, we should use useref instead.
-    // apply it here when you have time.
-
-    const newMessage = { id: tempId, role: "User", message: input };
-    // apply it to messages state
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
   };
 
   // for displaying messages
@@ -96,6 +96,11 @@ export function ChatComponents() {
   // i think this needs a whole refractor for more dynamic work.
 
   console.log("Current messages:", messages); //debugging
+
+  // to make it more dynamic. I am going to seperate the function for displaying the new message since both user and biyae needs it.
+  const displayMessage = (newMessage) => {
+    setMessages((prevMessages) => [...prevMessages, newMessage]);
+  };
 
   return (
     <>
