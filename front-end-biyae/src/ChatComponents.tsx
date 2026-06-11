@@ -49,6 +49,13 @@ export function ChatComponents() {
 
       const data = await response.json();
       console.log("Success:", data);
+      const assistantMessage = {
+        id: Date.now(),
+        role: "biy-ae",
+        message: data.reply,
+      };
+
+      displayMessage(assistantMessage);
     } catch (error) {
       console.error("Error sending message:", error);
     }
@@ -56,9 +63,6 @@ export function ChatComponents() {
 
     console.log("waiting done");
 
-    // unfinished. we have to kinda parse the infrmation into a container that fits the interface.
-    // so make a small little container when you come back.
-    displayMessage(newMessage);
     setIsWaiting(false);
   };
 

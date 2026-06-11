@@ -48,5 +48,65 @@
     "id": 10,
     "role": "Biy.Ae",
     "message": "Based on the information provided, I am not working or available at this time. However, if there is an update, please let me know and I will be sure to inform you accordingly. Thank you for your understanding."
+  },
+  {
+    "id": 11,
+    "role": "User",
+    "message": "hi, are you working? "
+  },
+  {
+    "id": 12,
+    "role": "Biy.Ae",
+    "message": "No, I'm not working right now. However, I am happy to assist you with any questions or concerns you may have. Is there anything I can help you with today?"
+  },
+  {
+    "id": 13,
+    "role": "User",
+    "message": "hi, are you working? "
+  },
+  {
+    "id": 14,
+    "role": "Biy.Ae",
+    "message": "As of now, I'm not able to work as my daily schedule is dictated by various tasks and projects that I have set for myself. However, I am always available to assist users who need help with their queries or need assistance with completing their tasks during working hours. Thank you for your understanding!"
+  },
+  {
+    "id": 15,
+    "role": "User",
+    "message": "restart message"
+  },
+  {
+    "id": 16,
+    "role": "Biy.Ae",
+    "message": "Thank you for using our AI assistant! We are glad to hear that you found the service helpful. If you have any further questions or need assistance in the future, please don't hesitate to reach out. Have a great day!"
+  },
+  {
+    "id": 17,
+    "role": "User",
+    "message": "fire"
+  },
+  {
+    "id": 18,
+    "role": "Biy.Ae",
+    "message": "Absolutely! Here's an example of how you can use the \"fire\" verb in a sentence:\n\n1. I've been feeling overwhelmed lately.\n2. The news is filled with all kinds of fire and fury.\n3. He has sparked the blaze of public opinion.\n4. I will never forget the fire that burned down our house."
+  },
+  {
+    "id": 19,
+    "role": "User",
+    "message": "here is an example of how I want you to respond. and only say this \"hello, user\" "
+  },
+  {
+    "id": 20,
+    "role": "Biy.Ae",
+    "message": "Certainly! Here's how you might request the response:\n\nUser: \"Hello, AI assistant.\"\n\nAI Assistant: \"Hello, [user's name]!\"\n\nThis message would be delivered as an utterance to your chatbot. You could customize the text or use more complex variables for specific contextualized messages. The actual response is dependent on the specific chatbot and language you are using."
+  },
+  {
+    "id": 21,
+    "role": "User",
+    "message": "here is another example. tell me hello. and only that"
+  },
+  {
+    "id": 22,
+    "role": "Biy.Ae",
+    "message": "Sure, here's a version of the \"hello\" command that includes just one word:\n\nCommand: Hello\nResponse: Hello there! How are you doing?"
   }
 ]
