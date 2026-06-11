@@ -28,7 +28,7 @@ export function ChatComponents() {
     // adding new userchat to print on chat box.
     // create message container to fit inside messages array.
     // eslint-disable-next-line react-hooks/purity
-    const tempId = Date.now(); // to fix impure function calling.
+    const tempId = Date.now(); // to fix impure function calling. my fix is to use the current response in the most recent parse. meaning, I have to figure out how to grab that information and create the interface to connect them.
     const newMessage = { id: tempId, role: "User", message: input };
     displayMessage(newMessage);
 
@@ -50,6 +50,7 @@ export function ChatComponents() {
       const data = await response.json();
       console.log("Success:", data);
       const assistantMessage = {
+        // eslint-disable-next-line react-hooks/purity
         id: Date.now(),
         role: "biy-ae",
         message: data.reply,
