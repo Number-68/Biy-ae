@@ -1,6 +1,6 @@
 // import chatExample from "./test-chat.json";
 
-//import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 // useState - for local storing of data for UI components. you could use sessionStorage but that means you would need to
 // manually update the component. that's what useState was designed for. however, it's not persistent through pages,
 // which you could apply both methods to maintain persistent data upon pages or page loads.
@@ -28,11 +28,20 @@ export function ChatBoxContainer({ messages }) {
       ); // continuously adds elements -- one long line of similar <div> elements
     });
 
-  // updaters
-  // another will be getting most recent chat message. basically.
+  // auto scrolling when messages updates
+  const chatContainerRef = useRef(null);
+  useEffect(() => {
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTop =
+        chatContainerRef.current.scrollHeight;
+    }
+  }, [messages]);
+  // an idea of style. do i want it to present the text as scrolling animation? that would be cool.
+  // or should I just appear it immediately and set the scroll to the top of the model's message?
+  // we'll figure it out another time
 
   return (
-    <section id="chat-box-container">
+    <section id="chat-box-container" ref={chatContainerRef}>
       {/* 
         <div className="biyae-box"></div>
         <div className="user-box"></div> 

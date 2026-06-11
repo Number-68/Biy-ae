@@ -21,7 +21,10 @@ export function ChatComponents() {
   const sendMessage = async (input) => {
     console.log("waiting for response");
     //do not send empty messages
-    if (!input.trim()) return;
+    if (!input.trim()) {
+      console.log("do not send empty messages");
+      return;
+    }
 
     // prepare message into json
     const jsonMessage = JSON.stringify({ message: input });
