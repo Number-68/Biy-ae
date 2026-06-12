@@ -1,0 +1,11 @@
+
+
+two databases 
+
+postgreSQL
+for users and other things like that. simple. 
+
+
+
+mongoDB 
+this will be used for all chat conversation history. etc.
