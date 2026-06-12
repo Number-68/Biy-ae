@@ -13,10 +13,9 @@ export function InputBoxContainer({ onSend, disabled }) {
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
+      console.log("send message triggered");
+      e.preventDefault();
       confirmSend();
-      // this can be put into the element rather than  as an arrow function.
-      // todo: too lazy to do it now.
-      // even though it's short.
     }
   };
 
@@ -29,6 +28,7 @@ export function InputBoxContainer({ onSend, disabled }) {
 
       // Clear message
       setInput("");
+      // small bug here: for some reason. when pressing enter and sending a message it adds an enter space for some reason?
     }
   };
 

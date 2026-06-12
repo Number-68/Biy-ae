@@ -19,11 +19,21 @@ export function ChatComponents() {
 
   //send the message
   const sendMessage = async (input) => {
+    console.log("waiting for response");
     //do not send empty messages
-    if (!input.trim()) return;
+    if (!input.trim()) {
+      console.log("do not send empty messages");
+      return;
+    }
 
     // prepare message into json
     const jsonMessage = JSON.stringify({ message: input });
+    // adding new userchat to print on chat box.
+    // create message container to fit inside messages array.
+    // eslint-disable-next-line react-hooks/purity
+    const tempId = Date.now(); // to fix impure function calling. my fix is to use the current response in the most recent parse. meaning, I have to figure out how to grab that information and create the interface to connect them.
+    const newMessage = { id: tempId, role: "User", message: input };
+    displayMessage(newMessage);
 
     try {
       console.log("waiting true");
@@ -42,24 +52,22 @@ export function ChatComponents() {
 
       const data = await response.json();
       console.log("Success:", data);
+      const assistantMessage = {
+        // eslint-disable-next-line react-hooks/purity
+        id: Date.now(),
+        role: "biy-ae",
+        message: data.reply,
+      };
+
+      displayMessage(assistantMessage);
     } catch (error) {
       console.error("Error sending message:", error);
     }
     // setInput("");
 
     console.log("waiting done");
+
     setIsWaiting(false);
-
-    // adding new userchat to print on chat box.
-    // create message container to fit inside messages array.
-    // eslint-disable-next-line react-hooks/purity
-    const tempId = Date.now(); // to fix impure function calling.
-    //todo: instead of using date.now, since it's causing this error even though it's a false positive, we should use useref instead.
-    // apply it here when you have time.
-
-    const newMessage = { id: tempId, role: "User", message: input };
-    // apply it to messages state
-    setMessages((prevMessages) => [...prevMessages, newMessage]);
   };
 
   // for displaying messages
@@ -82,10 +90,12 @@ export function ChatComponents() {
       .catch((err) => console.error("Error loading history:", err)); // .catch() error handles. blatantly.
   }, []);
 
-  // todo, add function to auto scroll the page down so that the user doesn't have to do that when
-  // new messages are added.
-
   console.log("Current messages:", messages); //debugging
+
+  // to make it more dynamic. I am going to seperate the function for displaying the new message since both user and biyae needs it.
+  const displayMessage = (newMessage) => {
+    setMessages((prevMessages) => [...prevMessages, newMessage]);
+  };
 
   return (
     <>
