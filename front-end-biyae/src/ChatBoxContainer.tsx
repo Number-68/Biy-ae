@@ -32,8 +32,10 @@ export function ChatBoxContainer({ messages }) {
   const chatContainerRef = useRef(null);
   useEffect(() => {
     if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop =
-        chatContainerRef.current.scrollHeight;
+      const lastMessage = chatContainerRef.current.lastElementChild;
+      if (lastMessage) {
+        lastMessage.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
   }, [messages]);
   // an idea of style. do i want it to present the text as scrolling animation? that would be cool.
