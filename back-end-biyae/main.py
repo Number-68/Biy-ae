@@ -68,26 +68,24 @@ def TotalChat():
             json.dump([], f, indent=2)
     # this is just a test, probalby delete later when full system works.
 
-
+    
     # parse and send data
     try:
         with open(CHAT_FILE, "r", encoding="utf-8") as f:
             data = json.load(f)
+            print(data)
         return data
     except json.JSONDecodeError:
         raise HTTPException(status_code=500, detail="Chat file is corrupted")
 
 @app.post("/NewMessage")
 def NewMessage(payload: MessageRequest):
-    # --- 1. Save user message (your existing code) ---
-    if not CHAT_FILE.exists():
-        data = []
-    else:
-        try:
-            with open(CHAT_FILE, "r", encoding="utf-8") as f:
-                data = json.load(f)
-        except json.JSONDecodeError:
-            raise HTTPException(status_code=500, detail="Corrupt JSON file")
+    
+    data = load_chat_history()
+
+    print("Number of items:", len(data))
+    for i, item in enumerate(data[:3]):  # print first 3
+        print(f"Item {i}: type={type(item)}, value={item}")
 
     if data:
         next_id = max(item["id"] for item in data) + 1
@@ -101,23 +99,14 @@ def NewMessage(payload: MessageRequest):
     }
     data.append(user_message)
 
-    # --- 2. Call Ollama ---
-    OLLAMA_URL = "http://localhost:11434/api/generate"
-    try:
-        with httpx.Client(timeout=30.0) as client:
-            ollama_payload = {
-                "model": "tinyllama",          # or whatever model you pulled
-                "prompt": payload.message,
-                "stream": False
-            }
-            response = client.post(OLLAMA_URL, json=ollama_payload)
-            response.raise_for_status()
-            ollama_reply = response.json()["response"]
-    except Exception as e:
-        # If Ollama fails, still save user message but return error
-        raise HTTPException(status_code=502, detail=f"Ollama error: {str(e)}")
 
-    # --- 3. Save assistant reply ---
+    formatted_payload = transform_to_ollama_chat(data)
+    
+    # call ollama function (interchangeable) only call
+    ollama_reply = call_ollama_chat(formatted_payload)
+    # ollama_reply = call_ollama_generate(payload)
+
+    # save reply
     assistant_id = next_id + 1
     assistant_message = {
         "id": assistant_id,
@@ -126,11 +115,11 @@ def NewMessage(payload: MessageRequest):
     }
     data.append(assistant_message)
 
-    # Write everything back to file
+    # write to file
     with open(CHAT_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-    # --- 4. Return both messages (or just the assistant reply) ---
+    # return response
     return {
         "status": "ok",
         "user_id": next_id,
@@ -139,3 +128,91 @@ def NewMessage(payload: MessageRequest):
     }
 
 # run with uvicorn main:app --reload
+
+
+# this is where i last ended off. we're going to start addingg the function for chat history visibility by the ai.
+# it's not a super huge add. it's just changing up the api fetch and parsing the data better. ez stuff.
+
+def load_chat_history():
+    """Read the JSON file and return the raw list of messages."""
+
+  
+    if not CHAT_FILE.exists():
+        return []  
+    else:
+        try:
+            with open(CHAT_FILE, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            raise HTTPException(status_code=500, detail="Corrupt JSON file")
+
+
+
+def transform_to_ollama_chat(chat_history):
+    """Convert your stored format to Ollama's /api/chat messages array."""
+    print("transforming json into ollama format")
+    print(chat_history)
+    
+    
+    ollama_messages = []
+    for msg in chat_history:
+        role_raw = msg["role"]
+        role = "user" if role_raw == "User" else "assistant"
+        ollama_messages.append({
+            "role": role,
+            "content": msg["message"]
+        })
+
+    print (ollama_messages)
+    return ollama_messages
+
+
+
+def call_ollama_generate(payload):
+    # call ollama using chat instead of generate.
+    OLLAMA_URL = "http://localhost:11434/api/generate"
+
+    print("calling ollama service /generate")
+    # debug message 
+    print(payload)
+    try:
+        with httpx.Client(timeout=30.0) as client:
+            ollama_payload = {
+                "model": "tinyllama",          
+                "prompt": payload.message,
+                "stream": False
+            }
+            response = client.post(OLLAMA_URL, json=ollama_payload)
+            response.raise_for_status()
+            ollama_reply = response.json()["response"]
+
+            return ollama_reply
+    except Exception as e:
+        # If Ollama fails, still save user message but return error
+        raise HTTPException(status_code=502, detail=f"Ollama error: {str(e)}")
+
+
+def call_ollama_chat(formatted_payload):
+    OLLAMA_URL = "http://localhost:11434/api/chat"
+    
+
+    print("calling ollama service /chat")
+    try:
+        with httpx.Client(timeout=30.0) as client:
+            ollama_payload = {
+                "model": "tinyllama",          
+                "messages": formatted_payload,
+                "stream": False
+            }
+
+
+            # print(ollama_payload)
+            response = client.post(OLLAMA_URL, json=ollama_payload)
+            response.raise_for_status()
+            ollama_reply = response.json()["message"]["content"]
+
+            print(response)
+            return ollama_reply
+    except Exception as e:
+        # If Ollama fails, still save user message but return error
+        raise HTTPException(status_code=502, detail=f"Ollama error: {str(e)}")
