@@ -127,11 +127,7 @@ def NewMessage(payload: MessageRequest):
         "reply": ollama_reply
     }
 
-# run with uvicorn main:app --reload
 
-
-# this is where i last ended off. we're going to start addingg the function for chat history visibility by the ai.
-# it's not a super huge add. it's just changing up the api fetch and parsing the data better. ez stuff.
 
 def load_chat_history():
     """Read the JSON file and return the raw list of messages."""
@@ -216,3 +212,19 @@ def call_ollama_chat(formatted_payload):
     except Exception as e:
         # If Ollama fails, still save user message but return error
         raise HTTPException(status_code=502, detail=f"Ollama error: {str(e)}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+# run with uvicorn main:app --reload
+
+# todo next: start working with mongoDB and postgreSQL. ez pz. but you can go install them right away.

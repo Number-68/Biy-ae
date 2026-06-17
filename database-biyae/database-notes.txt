@@ -9,3 +9,26 @@ for users and other things like that. simple.
 
 mongoDB 
 this will be used for all chat conversation history. etc.
+to install mongoDB: 
+
+curl -fsSL https://pgp.mongodb.com/server-8.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
+   --dearmor
+
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+(depending on ubuntu version)
+
+
+sudo apt-get install -y mongodb-org
+
+
+then to start, systemd
+sudo systemctl start mongod
+
+that should be it. 
+
+use this when making the docker file.
+
+to check
+sudo systemctl status mongod
+*cool stuff about systemd. I didn't know you could do this. learn somethign new everyday*
