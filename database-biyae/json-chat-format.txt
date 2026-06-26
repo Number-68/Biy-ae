@@ -1,0 +1,19 @@
+{
+    "_id": *id*,
+    "chat-title": *automatically generated title*,
+    "user-id": *user taken from sql?*,
+    "date-created": *date created*,
+    "date-last-accessed": *date last accessed*,
+    "messages": [
+        {
+            "id": *id number*,
+            "role: *user or Biy.Ae*,
+            "message": *the message*
+        },
+        {
+            "id": *id number*,
+            "role: *user or Biy.Ae*,
+            "message": *the message*
+        }, *and so on?*
+    ]
+}
