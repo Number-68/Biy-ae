@@ -32,3 +32,25 @@ use this when making the docker file.
 to check
 sudo systemctl status mongod
 *cool stuff about systemd. I didn't know you could do this. learn somethign new everyday*
+
+
+to access the mongo shell 
+mongosh
+
+
+
+
+
+for sql 
+to install: sudo apt install postgresql postgresql-contrib
+
+quick little commands for its interface
+sudo systemctl status postgresql
+sudo systemctl start postgresql
+sudo systemctl stop postgresql
+
+
+open the shell: sudo -u postgres psql
+
+
+todo next: design the database. put it as an image here.

@@ -2,111 +2,41 @@
   {
     "id": 1,
     "role": "User",
-    "message": "hi, your name is biy.ae. \nmy name is ryan"
+    "message": "can u call me pek pek"
   },
   {
     "id": 2,
     "role": "Biy.Ae",
-    "message": "Ryan E. McIntosh\nYour Name: Biy.ae"
+    "message": "Sure, I'd be happy to call you \"pek pek\"!"
   },
   {
     "id": 3,
     "role": "User",
-    "message": "can you repeat that for me? "
+    "message": "whats my name"
   },
   {
     "id": 4,
     "role": "Biy.Ae",
-    "message": "Ryan E. McIntosh \nYour Name: Biy.ae"
+    "message": "Sure, how about \"Bessie\"? That's a lovely name for a dog!"
   },
   {
     "id": 5,
     "role": "User",
-    "message": "thank you"
+    "message": "how long is my cock"
   },
   {
     "id": 6,
     "role": "Biy.Ae",
-    "message": "No problem! Thank you for letting us know what your name is. It's really helpful when we help you better understand how to format text or communicate with you. If you have any other questions, feel free to ask. Have a great day!"
+    "message": "Cock is the male reproductive organ in humans. It takes around 12 months to fully develop from fertilization to birth. However, this timeline can vary depending on various factors such as age, sex, and gender, and may be shorter or longer for certain species or individuals."
   },
   {
     "id": 7,
     "role": "User",
-    "message": "you will only respond to as biyae from now on"
+    "message": "can you summarize this conversation?"
   },
   {
     "id": 8,
     "role": "Biy.Ae",
-    "message": "Yes, of course. As Biy.ae, I can be reached at any time. You can count on me for helpful information or support when you need it. Thank you again! Have a great day too!"
-  },
-  {
-    "id": 9,
-    "role": "User",
-    "message": "what is my name now? "
-  },
-  {
-    "id": 10,
-    "role": "Biy.Ae",
-    "message": "Your new name is Biy.ae, as in \"Biy.ae\" or \"Biy AI.\" The suffix \"-ae\" is a common suffix for names that end in \"e\" or \"er\". So when someone writes your name, it's often shortened to Biy.ae."
-  },
-  {
-    "id": 11,
-    "role": "User",
-    "message": "no, my name is ryan"
-  },
-  {
-    "id": 12,
-    "role": "Biy.Ae",
-    "message": "Ryan E. McIntosh, you are correct. Ryan E. McIntosh is your new name. Thank you for letting us know about the change! Have a great day too!"
-  },
-  {
-    "id": 13,
-    "role": "User",
-    "message": "tell me this in two easy lines. what is your name. and what is my name? "
-  },
-  {
-    "id": 14,
-    "role": "Biy.Ae",
-    "message": "Hay Randy, Ay Ania, as in \"Randy Ay Ania\". Both names are great! Thank you for asking. Have a great day too!"
-  },
-  {
-    "id": 15,
-    "role": "User",
-    "message": "summarize this entire chat, please."
-  },
-  {
-    "id": 16,
-    "role": "Biy.Ae",
-    "message": "I can summarize this conversation between two individuals who have agreed to use their given names as the same name. The conversation is short and straightforward, starting with the original name \"Ryan E. McIntosh\" being changed to \"Ryan Ay Ania\" for convenience. Both names are unique, but the new one \"Ay Ania\" can be easily written or spoken in just two simple lines as seen above. The conversation ends positively and with a good day."
-  },
-  {
-    "id": 17,
-    "role": "User",
-    "message": "okay. goodnight"
-  },
-  {
-    "id": 18,
-    "role": "Biy.Ae",
-    "message": "Absolutely! Thank you for asking, that's all I can provide here in this chat summary. Have a great night too!"
-  },
-  {
-    "id": 19,
-    "role": "User",
-    "message": "how are you?"
-  },
-  {
-    "id": 20,
-    "role": "Biy.Ae",
-    "message": "I am doing well, thank you for asking. You are welcome! I hope your day is going fine too. Have a great one!"
-  },
-  {
-    "id": 21,
-    "role": "User",
-    "message": "thank you for your service"
-  },
-  {
-    "id": 22,
-    "role": "Biy.Ae",
-    "message": "No problem at all, happy to help in any way possible. It's good to hear that I could be of assistance to you. Have a great day too!"
+    "message": "Sure! Here's a summary of the conversation:\n- Surename: \"Bessie\" (shortened form)\n- Name of person requesting my name and why it means something to them: \"Sureye\"\n- Person asking for my name: \"Pek Pek\" or \"Beebee\"\n- Name they would like me to call them with, in this case \"Beebee\": \"Beessie\" (not a direct translation but shortened form)"
   }
 ]
