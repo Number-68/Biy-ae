@@ -8,3 +8,8 @@ createRoot(document.getElementById("root")!).render(
     <App />
   </StrictMode>,
 );
+
+// todo now where i last ended off:
+// install the router stuff,
+// figure out login page.
+// then we'll start doing sql integration with the usrs.

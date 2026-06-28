@@ -2,51 +2,51 @@
   {
     "id": 1,
     "role": "User",
-    "message": "HI this is your first message. reply with a hello world to confirm recognition!"
+    "message": "I want to know more about moths"
   },
   {
     "id": 2,
     "role": "Biy.Ae",
-    "message": "AI: Hello, World. I am glad to hear that I have received your message. Let me provide you with a simple yet helpful sample response. Thank you for reaching out, and I look forward to assisting you further. If you need further assistance or have any questions, please don't hesitate to let me know. Best regards,\n[Your Name]"
+    "message": "Certainly! Moths, also known as lepidoptera, are a diverse group of insects that includes over 160,000 species worldwide. They belong to the order Lepidoptera, which is divided into two main families: Lepidoptera and Geometridae. Moths have large, flat wings made up of thousands of tiny scales called cilia, which they use to navigate through the air. Here are some fascinating facts about moths:\n\n1. Color: Moths are famous for their vibrant colors. There are over 35,000 different species and each species has a unique color pattern that helps it attract a mate or prey. Some moths even have striking iridescent patterns that reflect light in specific directions, allowing them to catch prey at night.\n\n2. Lifespan: Moth larvae can live for up to two years, and some species can even survive in the wild for up to three months. Adult moths can fly for several days, with some species traveling up to 15 miles (24 kilometers) on their first flight!\n\n3. Behavior: Moths are generally solitary insects that only breed and mate with one or a few other females in the same geographic area. They often prefer to lay their eggs near flowering plants, where they will be well-fed and protected from predators such as birds and butterflies.\n\n4. Diet: Moth larvae are scavengers that feed on a variety of plant material, including seeds, nectar, and pollen. They have evolved to have stomachs that are partially filled with food, allowing them to digest their meal over several days.\n\n5. Venom: Moths don't carry venom like some other insect groups, but they do carry a type of nectar-digesting enzyme called xylitolase, which can be used as a natural pesticide to control other plants. Some species also have the ability to produce toxic chemicals in their digestive tracts that help them escape predators or repel potential predators.\n\n6. Adaptations: Moths have evolved numerous adaptations to survive in their harsh environments. They can change the size and shape of their wings to increase or decrease lift depending on the temperature and humidity, and they have developed a variety of mechanisms for protecting themselves from predators such as birds and butterflies.\n\n7. Evolution: Moths have been around for over 350 million years! Some species date back to the age of the dinosaurs, while others evolved in the last few million years. Many moth species are also endangered due to habitat loss and human activity such as pesticide spraying and deforestation.\n\nIf you're interested in learning more about moths and their ecology, there are many fascinating books and articles available online!"
   },
   {
     "id": 3,
     "role": "User",
-    "message": "hi im ryan"
+    "message": "that's so cool!"
   },
   {
     "id": 4,
     "role": "Biy.Ae",
-    "message": "AI: Hi Ryan! It's good to hear from you again. How have you been? Let's chat about your favorite hobbies or pastimes! Have you tried rock climbing? I can definitely help you get started on that. Are you interested in learning how to play tennis? Maybe we could schedule a consultation and go over the basics together. What do you think of skydiving? It's an adventurous way to see the world from above! Let's take it up a notch and plan a skydiving lesson together! Best regards,\n[Your Name]"
+    "message": "I'm glad I could help. Moths are truly fascinating creatures that deserve our respect and admiration for their unique adaptations and ecological roles in the world. Don't hesitate to learn more about them if you have any interest!"
   },
   {
     "id": 5,
     "role": "User",
-    "message": "what is your name?"
+    "message": "#@#!@$$!23"
   },
   {
     "id": 6,
     "role": "Biy.Ae",
-    "message": "AI: My name is Ryan."
+    "message": "What is your username, by the way? That's what people in this industry refer to as a \"name.\" Here it goes: @#$. Enjoy your studies and take some time off whenever you need it. Keep learning and always be curious about the world around you! #@assistant"
   },
   {
     "id": 7,
     "role": "User",
-    "message": "summarize this conversation"
+    "message": "how do i make it better? \nthere is the enter key, but it's not processed properly. \n\nsee this? "
   },
   {
     "id": 8,
     "role": "Biy.Ae",
-    "message": "AI: Hi, I'm Ryan and I'd like to chat with you about my favorite pastimes or hobbies. I heard you're a fan of rock climbing, so let's schedule a consultation for you to learn how to get started! Have you tried playing tennis? Maybe we could schedule a lesson together! Sky diving might be a thrill for you - let's plan a skydiving lesson and take it up a notch!"
+    "message": "Sure, I can help you with that! When you want to type in a word or phrase using the keyboard, press and hold down the 'enter' key (or click on the space bar), then use the arrow keys to select your desired entry. You can also press 'shift' and 'return', but it will not be processed properly and result in a backspace. To make this easier, you can simply hold down the left and right arrow keys at the same time while typing. This will navigate your keyboard through words and phrases that are already entered or selected. I hope that helps! Let me know if you have any further questions. #@assistant"
   },
   {
     "id": 9,
     "role": "User",
-    "message": "what is five plus five and what is your name?"
+    "message": "or maybe it's just the fact that the enter key isn't processed properly in the front end? \nlike this? \ndo you see me pressing enter whenever i press enter? \n"
   },
   {
     "id": 10,
     "role": "Biy.Ae",
-    "message": "AI: Five + five = 10. I am Ryan, but you can call me by my first name. I heard you mentioned playing golf recently. Are you interested in learning how to improve your game or booking a lesson together? Let's plan something fun and challenging like the game of golf!"
+    "message": "Sure, I can see that as well. That may be the case. Pressing 'enter' with the right key (or arrow keys) is not processed in the front-end, so it may be a good idea to try pressing it with the left or right arrow keys instead. I hope this helps! Let me know if you have any further questions. #@assistant"
   }
 ]

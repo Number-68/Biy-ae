@@ -42,6 +42,9 @@ export function ChatBoxContainer({ messages }) {
   // or should I just appear it immediately and set the scroll to the top of the model's message?
   // we'll figure it out another time
 
+  // when pressing enter, the chat interface doesn't present it as a line break.
+  // but, it is in fact saving the enter inputs in the chat database, so it should be valid. i just have to fix it.
+
   return (
     <section id="chat-box-container" ref={chatContainerRef}>
       {/* 
