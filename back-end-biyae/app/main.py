@@ -20,13 +20,10 @@ import httpx
 
 
 
+# api imports
 
+from app.TestingArea.helloTestingHello import router
 
-
-
-
-# define testjson file
-CHAT_FILE = Path("test-chat.json")
 
 
 # defining expected type 
@@ -37,6 +34,10 @@ class MessageRequest(BaseModel):
 
 # apply instance to a variable
 app = FastAPI()
+
+
+app.include_router(router)
+
 
 
 
@@ -220,8 +221,8 @@ def call_ollama_chat(formatted_payload):
 
 
 # interface for signup. 
-@app.get("/TotalChat")
-def TotalChat():
+# @app.get("/TotalChat")
+# def TotalChat():
 
 
 
@@ -229,6 +230,8 @@ def TotalChat():
 
 
 
-# run with uvicorn main:app --reload
+# run with uvicorn app.main:app --reload
+# do this from outside of app\ in the root of our backend
 
-# todo next: start working with mongoDB and postgreSQL. ez pz. but you can go install them right away.
+# todo next: start working with mongoDB and postgreSQL. 
+# ez pz. but you can go install them right away.
