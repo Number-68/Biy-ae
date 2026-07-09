@@ -53,4 +53,3 @@ sudo systemctl stop postgresql
 open the shell: sudo -u postgres psql
 
 
-todo next: design the database. put it as an image here.

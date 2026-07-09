@@ -219,6 +219,10 @@ def call_ollama_chat(formatted_payload):
 
 
 
+# interface for signup. 
+@app.get("/TotalChat")
+def TotalChat():
+
 
 
 
