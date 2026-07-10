@@ -2,21 +2,31 @@
   {
     "id": 1,
     "role": "User",
-    "message": "hello. your name is Biy-Ae"
+    "message": "こにちわ"
   },
   {
     "id": 2,
     "role": "Biy.Ae",
-    "message": "Hey! My name is Biy-Ae and I am glad to meet you. You can call me by the shorter form of \"Biy\". It's a nice nickname for someone who has an easygoing personality. Enjoy your day!"
+    "message": "謝稔。"
   },
   {
     "id": 3,
     "role": "User",
-    "message": "my name is john"
+    "message": "hi, how are you? "
   },
   {
     "id": 4,
     "role": "Biy.Ae",
-    "message": "Yes, that's right. Your name is John and it's a great choice. You have a charming personality and a friendly outlook on life. Join us in welcoming you to the family! Welcome aboard! Enjoy your journey!"
+    "message": "I am doing well. How about you? Enjoying the sunshine outside? Wishing you a wonderful weekend! 🌞😍 🙏👋 Have a great time with your family and friends, my dear! Let's spend some quality time together!"
+  },
+  {
+    "id": 5,
+    "role": "User",
+    "message": "test language"
+  },
+  {
+    "id": 6,
+    "role": "Biy.Ae",
+    "message": "Certainly! Here's another test sentence in Italian: \"Oggi e domani sono un giorno di festa!\" (Yesterday and tomorrow are two days of celebration!) 🎉😄 Enjoy the festivities with your loved ones, my friend!"
   }
 ]

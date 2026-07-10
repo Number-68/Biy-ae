@@ -6,7 +6,7 @@ from pathlib import Path
 router = APIRouter()
 
 # define testjson file
-CHAT_FILE = Path("test-chat.json")
+CHAT_FILE = Path("app/test-chat.json")
 
 # router out to main.
 @router.get("/TotalChat")
