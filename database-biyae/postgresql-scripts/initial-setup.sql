@@ -20,4 +20,8 @@ GRANT USAGE ON ALL SEQUENCES IN SCHEMA users TO biyaeconnect;
 -- create users table
 \ir users-table.sql
 
+-- after we finish this burst of coding. we need to definitely 
+-- annotate all of this stuff cause some of it is confusing me. 
+-- and I just kinda copied a bunch of this stuff from stack exchange. 
+-- annotate to understand better.
 

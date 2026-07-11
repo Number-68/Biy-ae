@@ -28,5 +28,25 @@
     "id": 6,
     "role": "Biy.Ae",
     "message": "Certainly! Here's another test sentence in Italian: \"Oggi e domani sono un giorno di festa!\" (Yesterday and tomorrow are two days of celebration!) 🎉😄 Enjoy the festivities with your loved ones, my friend!"
+  },
+  {
+    "id": 7,
+    "role": "User",
+    "message": "test language"
+  },
+  {
+    "id": 8,
+    "role": "Biy.Ae",
+    "message": "Sure thing! Here's a test sentence in Spanish: \"La semana entera es el dia de la fiesta!\" (The entire week is the day of celebration!) 🎉😄 ¡Buenos días y felices fiestas!"
+  },
+  {
+    "id": 9,
+    "role": "User",
+    "message": "can you translate what this means?\n謝稔。"
+  },
+  {
+    "id": 10,
+    "role": "Biy.Ae",
+    "message": "As someone who speaks Japanese, I can understand and respond to your request. Here's the same sentence in Japanese: \"はんすけぼう！\" (Thank you very much! ) ♪🌸👋"
   }
 ]

@@ -1,5 +1,8 @@
 from fastapi import FastAPI
 
+# for post stuff
+from pydantic import BaseModel
+
 # for total chat
 import json
 from pathlib import Path
@@ -25,7 +28,7 @@ CHAT_FILE = Path("app/test-chat.json")
 # apply instance to a variable
 app = FastAPI()
 
-# api imports
+# --------ENDPOINTS--------
 
 # test imports
 from app.TestingArea.helloTestingHello import router as helloTestingHello
@@ -68,6 +71,8 @@ class UserAdmin(ModelView, model=User):
 authentication_backend = AdminAuth(secret_key="randomrandomrandom")
 
 
+
+
 admin = Admin(app, engine, authentication_backend=authentication_backend)
 
 admin.add_view(UserAdmin)
@@ -93,12 +98,34 @@ app.add_middleware(
 
 
 
-
+# define the data needed for the post.
+class SignupRequest(BaseModel):
+    email: str
+    username: str
+    givenName: str
+    surname: str
+    password: str
+    confirmPassword: str
 
 
 # interface for signup. 
-# @app.get("/TotalChat")
-# def TotalChat():
+@app.post("/signup")
+def SignUp(payload: SignupRequest):
+
+    # ---- parse data
+
+    # ---- validate data.
+    # clean data?
+    # 
+
+    # ---- process the data 
+    # hash the password immediately.
+
+    # get response.
+    return {
+        # send response success or fail.
+        "message": "Main app is running"
+        }
 
 
 
@@ -110,4 +137,5 @@ app.add_middleware(
 # do this from outside of app\ in the root of our backend
 
 # todo next: start working with mongoDB and postgreSQL. 
-# ez pz. but you can go install them right away.
+# next: figure out how to make users from signin. 
+# then figure out how to long in and ensure a user session is their own.
